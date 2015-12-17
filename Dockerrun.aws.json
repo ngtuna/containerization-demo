@@ -1,0 +1,32 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "fplay",
+      "image": "chanhlv93/fplay",
+      "essential": true,
+      "memory": 128,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 8080
+        }
+      ],
+      "links": [
+        "mysql"
+      ]
+    },
+    {
+      "name": "mysql",
+      "image": "chanhlv93/mysql",
+      "essential": true,
+      "memory": 128,
+      "environment": [
+        {
+          "name": "MYSQL_ROOT_PASSWORD",
+          "value": "123456"
+        }
+      ]
+    }
+  ]
+}
