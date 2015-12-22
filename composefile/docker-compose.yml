@@ -1,0 +1,11 @@
+web:
+  image: nguyenanhtu/fplay-app
+  links:
+    - mysql
+  ports:
+    - "8080:8080"
+
+mysql:
+  image: nguyenanhtu/fplay-mysql
+  environment:
+     - MYSQL_ROOT_PASSWORD=123456
